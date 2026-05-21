@@ -1,0 +1,205 @@
+.pageHeader {
+  position: relative;
+  padding: 80px 0 48px;
+  text-align: center;
+  background: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(56,189,248,0.06) 0%, transparent 60%);
+  border-bottom: 1px solid var(--border-2);
+  overflow: hidden;
+}
+.pageHeader h1 {
+  margin: 10px 0 12px;
+  background: linear-gradient(135deg, var(--text) 40%, var(--blue));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.pageHeader p { font-size: 16px; max-width: 480px; margin: 0 auto; }
+
+/* ── Layout ── */
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 32px;
+  align-items: start;
+}
+
+/* ── Form ── */
+.formWrap {
+  background: var(--surface);
+  border: 1px solid var(--border-2);
+  border-radius: var(--radius-lg);
+  padding: 36px;
+}
+
+.formTitle {
+  color: var(--text);
+  margin-bottom: 28px;
+  font-size: 1.4rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.label {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-3);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.input {
+  background: var(--bg-3);
+  border: 1px solid var(--border-2);
+  border-radius: var(--radius);
+  padding: 11px 14px;
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.15s;
+  width: 100%;
+}
+.input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(0,255,136,0.08);
+}
+.input option { background: var(--bg-3); }
+
+.textarea { resize: vertical; min-height: 120px; }
+
+/* ── Success ── */
+.success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 40px 20px;
+  gap: 12px;
+}
+.successIcon { font-size: 48px; }
+.success h3 { color: var(--accent); font-size: 1.3rem; }
+.success p  { font-size: 15px; }
+
+/* ── Sidebar ── */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.infoCard { display: flex; flex-direction: column; gap: 4px; }
+.infoTitle { color: var(--text); font-size: 1.05rem; margin-bottom: 16px; }
+
+.contacts { display: flex; flex-direction: column; gap: 16px; }
+.contactItem { display: flex; align-items: flex-start; gap: 12px; }
+.contactIcon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+.contactLabel {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-3);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 2px;
+}
+.contactItem a { font-size: 14px; }
+
+.badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  background: var(--surface);
+  border: 1px solid var(--border-2);
+  border-radius: var(--radius);
+  font-size: 13px;
+  color: var(--text-2);
+}
+.badgeDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex-shrink: 0;
+  animation: glow-pulse 2s ease-in-out infinite;
+}
+
+/* ── FAQ ── */
+.faqWrap { margin-top: 0; }
+
+.faq {
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.faqItem {
+  background: var(--surface);
+  border: 1px solid var(--border-2);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: border-color 0.15s;
+}
+.faqOpen {
+  border-color: var(--border);
+}
+
+.faqQ {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--text);
+  font-size: 15px;
+  text-align: left;
+  font-family: var(--font-sans);
+  gap: 16px;
+}
+.faqQ:hover { color: var(--accent); }
+
+.faqArrow {
+  font-family: var(--font-mono);
+  font-size: 20px;
+  color: var(--accent);
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.faqA {
+  padding: 0 20px 16px;
+  font-size: 14px;
+  color: var(--text-2);
+  line-height: 1.7;
+  border-top: 1px solid var(--border-2);
+  padding-top: 14px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .layout { grid-template-columns: 1fr; }
+  .row    { grid-template-columns: 1fr; }
+  .formWrap { padding: 24px; }
+}
