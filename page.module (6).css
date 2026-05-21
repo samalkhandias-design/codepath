@@ -1,0 +1,121 @@
+.pageHeader {
+  position: relative;
+  padding: 80px 0 48px;
+  text-align: center;
+  background: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(0,255,136,0.06) 0%, transparent 60%);
+  border-bottom: 1px solid var(--border-2);
+  overflow: hidden;
+}
+.pageHeader h1 {
+  margin: 10px 0 12px;
+  background: linear-gradient(135deg, var(--text) 40%, var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.pageHeader p {
+  font-size: 16px;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+/* ── Filter bar ── */
+.filterBar {
+  background: var(--bg-2);
+  border-bottom: 1px solid var(--border-2);
+  padding: 16px 0;
+  position: sticky;
+  top: 64px;
+  z-index: 50;
+}
+
+.tabs {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.tab {
+  padding: 7px 16px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-2);
+  background: transparent;
+  border: 1px solid var(--border-2);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+}
+.tab:hover {
+  color: var(--text);
+  border-color: var(--border);
+}
+.tabActive {
+  color: var(--accent) !important;
+  border-color: var(--border) !important;
+  background: var(--accent-bg) !important;
+}
+
+/* ── Grid ── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cardTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.icon { font-size: 32px; }
+
+.cardTitle {
+  color: var(--text);
+  font-size: 1.1rem;
+}
+
+.cardDesc {
+  font-size: 14px;
+  line-height: 1.65;
+  flex: 1;
+}
+
+.cardTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.cardMeta {
+  display: flex;
+  gap: 16px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-3);
+  padding-top: 8px;
+  border-top: 1px solid var(--border-2);
+}
+
+.empty {
+  text-align: center;
+  color: var(--text-3);
+  padding: 80px 0;
+  font-family: var(--font-mono);
+  font-size: 16px;
+}
+
+@media (max-width: 900px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .grid { grid-template-columns: 1fr; }
+}
